@@ -61,8 +61,8 @@ public class Monads {
 				return m.chain(new Function<A, RM>() {
 					@Override
 					public RM apply(A a) {
-						// TODO: implement return
-						return null;
+						R r = f.apply(a);
+						return inject(r,r.getClass());
 					}
 				});
 			}
